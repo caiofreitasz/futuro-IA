@@ -1,33 +1,220 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <title>Você decide o futuro da IA</title>
+body {
+    min-height: 100vh;
 
-    <link rel="stylesheet" href="style.css">
-</head>
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-<body>
+    padding: 20px;
 
-    <div class="caixa-principal">
+    font-family: Arial, Helvetica, sans-serif;
 
-        <h1>Você decide o futuro da IA</h1>
+    background:
+        radial-gradient(circle at top, #172554, #020617 70%);
 
-        <div class="caixa-perguntas">
-        </div>
+    color: white;
+}
 
-        <div class="caixa-alternativas">
-        </div>
+.caixa-principal {
+    width: 100%;
+    max-width: 850px;
 
-        <div class="caixaderesultados">
-            <p class="texto-resultado"></p>
-        </div>
+    padding: 45px;
 
-    </div>
+    background: #1769aa;
 
-    <script src="script.js"></script>
+    border-radius: 20px;
 
-</body>
-</html>
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+h1 {
+    margin-bottom: 35px;
+
+    color: white;
+
+    font-size: clamp(2rem, 5vw, 3rem);
+
+    line-height: 1.15;
+
+    text-align: center;
+
+    font-weight: 800;
+}
+
+.caixa-perguntas {
+    margin-bottom: 25px;
+
+    padding: 25px;
+
+    background: rgba(0, 0, 0, 0.15);
+
+    border-radius: 15px;
+}
+
+.caixa-perguntas p {
+    color: white;
+
+    font-size: 1.3rem;
+
+    line-height: 1.6;
+
+    font-weight: 600;
+}
+
+.caixa-alternativas {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.botao-alternativa {
+    width: 100%;
+
+    padding: 18px 20px;
+
+    border: 2px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 12px;
+
+    background: #2196f3;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 1.05rem;
+
+    line-height: 1.5;
+
+    font-weight: bold;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.2);
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.botao-alternativa:nth-child(2) {
+    background: #0d47a1;
+}
+
+.botao-alternativa:hover {
+    background: #42a5f5;
+
+    border-color: white;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.botao-alternativa:nth-child(2):hover {
+    background: #1565c0;
+}
+
+.botao-alternativa:active {
+    transform: translateY(0);
+}
+
+.caixaderesultados {
+    display: none;
+
+    margin-top: 10px;
+
+    padding: 30px;
+
+    background: #0d47a1;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.texto-resultado {
+    color: white;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+}
+
+.texto-resultado > strong {
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: #90caf9;
+
+    font-size: 2rem;
+}
+
+.texto-resultado p {
+    margin-bottom: 16px;
+}
+
+.texto-resultado p strong {
+    color: #90caf9;
+}
+
+/* Responsividade */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .caixa-principal {
+        padding: 28px 20px;
+
+        border-radius: 16px;
+    }
+
+    h1 {
+        font-size: 2rem;
+
+        margin-bottom: 25px;
+    }
+
+    .caixa-perguntas {
+        padding: 20px;
+    }
+
+    .caixa-perguntas p {
+        font-size: 1.1rem;
+    }
+
+    .botao-alternativa {
+        padding: 16px;
+
+        font-size: 1rem;
+    }
+
+    .caixaderesultados {
+        padding: 22px;
+    }
+
+    .texto-resultado > strong {
+        font-size: 1.6rem;
+    }
+}
